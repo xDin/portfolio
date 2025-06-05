@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Portafolio - Diego Grijalva</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    /* Estilos globales */
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      /* Added background from second document */
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.65) 1px, transparent 1px);
+      background-size: 20px 20px;
+      background-blend-mode: overlay;
+    }
+    header {
+      text-align: center;
+      padding-top: 10px;
+      /* Removed gray background */
+      background: transparent;
+    }
+    .profile-photo {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #e0e0e0;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 2.5em;
+    }
+    header p {
+      font-size: 1.2em;
+      color: #b0b0b0;
+    }
+    nav {
+      background: transparent; /* Removed gray background */
+      padding: 10px 10px;
+      text-align: center;
+    }
+    nav a {
+      color: #e0e0e0;
+      /* the margin syntax is */
+      margin: 20px;
+      padding: 10px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: #000;
+      background: #fff;
+      border-radius: 5px;
+    }
+    section {
+      padding: 10px 20px;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2em;
+      color: #ffffff;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    /* Tarjetas de información */
+    .info-card {
+      width: 270px;
+      padding: 15px;
+      margin: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      background-color: #1e1e1e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 10px;
+      padding: 2px;
+      background: linear-gradient(90deg, rgba(51, 51, 51, 0.5), rgba(102, 102, 102, 0.8), rgba(51, 51, 51, 0.5));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      animation: borderGlow 6s linear infinite reverse;
+    }
+    @keyframes borderGlow {
+      0% { background-position: 300px 0; }
+      100% { background-position: -300px 0; }
+    }
+    .info-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+    .info-card h3 {
+      margin: 10px 0 5px;
+      font-size: 1.5em;
+      color: #ffffff;
+      text-align: center;
+    }
+    .info-card p {
+      margin: 5px 0;
+      font-size: 1em;
+      color: #b0b0b0;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: transparent; /* Removed gray background */
+    }
+    footer p {
+      margin: 0;
+      font-size: 1em;
+      color: #b0b0b0;
+      padding-top: 50px;
+    }
+    #certificaciones .info-card {
+       height: 220px;
+    }
+    .info-card:hover {
+        transform: scale(1.05) rotate(-1deg);
+    }
+    a .info-card:nth-of-type(odd):hover {
+        transform: scale(1.05) rotate(1deg);
+    }
+
+    
+
+
+  </style>
+</head>
+<body>
+  <!-- Cabecera con foto de perfil circular -->
+  <header>
+    <img src="placeholder.jpg" alt="Foto de perfil" class="profile-photo">
+    <h1>Diego Grijalva</h1>
+    <p>Desarrollador Web Front-End</p>
+  </header>
+  
+  <!-- Menú de navegación -->
+  <nav>
+    <a href="#acerca">Acerca de mí</a>
+    <a href="#certificaciones">Certificaciones</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#educacion">Educación</a>
+    <a href="#experiencia">Experiencia</a>
+  </nav>
+  
+  <!-- Sección Acerca de mí -->
+  <section id="acerca">
+    <h2>Acerca de mí</h2>
+    <p style="max-width: 650px; margin: auto; text-align: justify;">
+      Hola, soy Diego Grijalva, un apasionado desarrollador web que busca siempre perfeccionar y optimizar cada proyecto en el que trabajo. Tengo 21 años y actualmente curso la carrera de <strong>Ingeniería en Sistemas Computacionales</strong> con especialidad en Aplicaciones Web y Monitoreo de Sistemas Industriales en el TecNM de Nogales, Sonora. Me encanta aprender nuevas tecnologías y actualmente me estoy certificando en desarrollo front-end.
+    </p>
+  </section>
+  
+  <!-- Sección de Habilidades Técnicas -->
+  <section id="habilidades">
+    <h2>Habilidades Técnicas</h2>
+    <div class="card-container">
+      <div class="info-card">
+        <img src="https://img.icons8.com/color/512/html-5.png" alt="HTML">
+        <h3>HTML</h3>
+        <p>Estructura de páginas web</p>
+      </div>
+      <div class="info-card">
+        <img src="https://img.icons8.com/fluent/512/css3.png" alt="CSS">
+        <h3>CSS</h3>
+        <p>Diseño y estilos web</p>
+      </div>
+      <div class="info-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JavaScript">
+        <h3>JavaScript</h3>
+        <p>Interactividad y lógica</p>
+      </div>
+      <div class="info-card">
+        <img src="https://cdn.iconscout.com/icon/free/png-256/free-python-logo-icon-download-in-svg-png-gif-file-formats--technology-social-media-vol-5-pack-logos-icons-2945099.png?f=webp&w=256" alt="Python">
+        <h3>Python</h3>
+        <p>Automatización y scripting</p>
+      </div>
+      <div class="info-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Logo_C_sharp.svg/1200px-Logo_C_sharp.svg.png" alt="C#">
+        <h3>C#</h3>
+        <p>Desarrollo en .NET</p>
+      </div>
+      <div class="info-card">
+        <img src="https://avatars.githubusercontent.com/u/18133?s=280&v=4" alt="Git/GitHub">
+        <h3>Git</h3>
+        <p>Control de versiones</p>
+      </div>
+    </div>
+  </section>
+  
+<!-- Sección de Certificaciones -->
+<section id="certificaciones">
+    <h2>Certificaciones</h2>
+    <div class="card-container">
+        <a href="https://coursera.org/share/33aae75cee27f977a29ce4e72df52792" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="info-card">
+                <img src="https://freelogopng.com/images/all_img/1664035778meta-icon-png.png" alt="Certificación Front-End">
+                <h3>Introducción al Desarrollo Front-End</h3>
+                <p>Enero 2025</p>
+            </div>
+        </a>
+        <a href="https://coursera.org/share/f1117b0df6292b73d5a76a2cabad9aea" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="info-card">
+                <img src="https://freelogopng.com/images/all_img/1664035778meta-icon-png.png" alt="Certificación JavaScript">
+                <h3>Programación con JavaScript</h3>
+                <p>Enero 2025</p>
+            </div>
+        </a>
+        <a href="https://coursera.org/share/eba9484a43e450cfb122e825359f1fc2" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="info-card">
+                <img src="https://freelogopng.com/images/all_img/1664035778meta-icon-png.png" alt="Certificación Version Control">
+                <h3>Control de Versiones</h3>
+                <p>Febrero 2025</p>
+            </div>
+        </a>
+        <a href="https://coursera.org/share/3b8b89cc8da0a8d48d5931adfc27157a" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="info-card">
+                <img src="https://freelogopng.com/images/all_img/1664035778meta-icon-png.png" alt="Certificación HTML y CSS">
+                <h3>HTML y CSS a Fondo</h3>
+                <p>Marzo 2025</p>
+            </div>
+        </a>
+    </div>
+  </section>
+
+  <!-- Sección de Educación -->
+  <section id="educacion">
+    <h2>Educación</h2>
+    <div class="card-container">
+      <div class="info-card" style="width: 350px;">
+        <img src="https://www.tecnm.mx/images/tecnm_virtual/tecnm.png" alt="Institución">
+        <h3>Ingeniería en Sistemas Computacionales</h3>
+        <p><strong>Especialidad:</strong> Aplicaciones Web y Monitoreo de Sistemas Industriales</p>
+        <p><strong>Institución:</strong> TecNM, Nogales, Sonora</p>
+        <p><strong>Periodo:</strong> Agosto 2021 - Diciembre 2025</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Sección de Experiencia y Proyectos -->
+  <section id="experiencia">
+    <h2>Experiencia y Proyectos</h2>
+    <div class="card-container">
+        <a href="shrub.html" target="_blank" style="text-decoration: none; color: inherit;">
+            <div class="info-card" style="width: 550px">
+                <img src="pagina.png" alt="Prácticas Profesionales" style="width: 550px; height: auto;">
+                <h3>Pagina de Lucky Shrub</h3>
+                <p>Pagina hecha para Lucky Shrub, una empresa imaginaria de paisajismo utilizada para completar una tarea en mi certificacion.</p>
+            </div>
+        </a>
+      <div class="info-card" style="width: 550px">
+        <img src="pagina2.png" alt="Proyecto Personal" style="width: 550px; height: auto;">
+        <h3>Compliador C-Craft</h3>
+        <p>Compilador escritor en C#, que es capaz de compilar codigo similar al C#, y correrlo en un emulador 8086</p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Pie de página -->
+  <footer>
+    <p>Contacto: diego5dags@gmail.com | © 2025 Diego Grijalva</p>
+  </footer>
+</body>
+</html>
